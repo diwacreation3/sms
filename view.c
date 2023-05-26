@@ -276,7 +276,7 @@ FILE *info_read;
         system("cls");
     }
     int class = 9;
-    char name[MAX], parent_name[MAX], addr[MAX];
+    char name[MAX],last[MAX] ,parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
@@ -287,7 +287,7 @@ FILE *info_read;
     printf("+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
-    while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
+    while (fscanf(info_read, "%s-%s %s %s  %s  %lld", name,last, dob, &addr, parent_name, &phone) != EOF)
     {
         printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
@@ -317,7 +317,7 @@ FILE *info_read;
     // scanf("%d",&class);
     printf("\n");
     printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("| Class    Name        DOB            Address           Parent-Name         Phone No.       |\n");
     printf("+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
@@ -343,26 +343,28 @@ FILE *info_read;
         printf( "Database is Empty!! " );
         
     }
-    int class = 1;
-    char name[MAX], parent_name[MAX], addr[MAX];
+    int class ;
+    char name[MAX], parent_name[MAX];
     long long int phone;
-    char dob[MAX];
+    
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
     printf("\n");
     printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("| Class     Name         Parent-Name         Phone No.          |\n");
     printf("+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
-    while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
+    int count;
+    while (fscanf(info_read, " %d %s %s  %lld",&class, name,  parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
-               6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
-            
-    }
+        printf("| %-*d  \t %-*s \t%-*s \t %-*lld\t  \n",
+               6, class, 15, name, 10, parent_name, 10, phone,10);
+         count+1;
 
+    }
     // Print border.
     printf("+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
+    printf( "Total student is %d \n",count );
 }
