@@ -1,14 +1,24 @@
-// include header files here
+/*
+Author/developer: Diwakar Phuyal
+Github: https://github.com/diwacreation3
+Project type: School management system
+
+project for BICTE 1st semester by Tribhuvan University
+*/ 
+//start standard library
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
 #include <conio.h>
 #include <unistd.h>
+//end standard library
+
+//start user defined library
 #include "create_db.c"
-// #include "read_db.c"
-// #include "line.c"
 #include "view.c"
 #include "update_db.c"
+//end user defined library 
+
 
 // #define MAX 50
 void delete_db(void);
@@ -30,18 +40,17 @@ int code = 0;
 
 int main()
 {
-
     menu();
     return 0;
 }
 void menu()
 {
     printf("______________________________\n");
-    printf("School management system \n ");
+    printf("  School management system \n ");
     printf("______________________________\n");
     printf("1. New Admission \n");
-    printf("2.  view students\n");
-    printf("3. delete students\n ");
+    printf("2. view student\n");
+    printf("3. delete student\n ");
     printf("4. Update student\n");
     printf("5. Search \n");
     printf("6. Home\n");
@@ -65,10 +74,19 @@ void menu()
     case '5':
         search();
         break;
+    case '6':
+        menu();
+        break;
+    case '7':
+    logout();
+    break;    
     default:
         system("cls");
-        printf("invalid input");
+        printf("invalid input \n");
+        printf( "Press any key.." );
         getch();
+        main();
+        
     }
 }
 // admission function start
@@ -303,8 +321,58 @@ void update_student()
     printf("Enter class: ");
     scanf("%d", &class);
     if(class == 1){
-        class_1_u();
+        class_1_u(); //calling class-1 update function 
         system("cls");
+    } else if (class == 2){
+        class_2_u();
+        system("cls");
+
+    } else if (class == 3){
+        class_3_u();
+        system("cls");
+        
+    }else if (class == 3){
+        class_3_u();
+        system("cls");
+        
+    }else if (class == 4){
+        class_4_u();
+        system("cls");
+        
+    }else if (class == 5){
+        class_5_u();
+        system("cls");
+        
+    }else if (class == 6){
+        class_6_u();
+        system("cls");
+        
+    }else if (class == 7){
+        class_7_u();
+        system("cls");
+        
+    }else if (class == 8){
+        class_8_u();
+        system("cls");
+        
+    }else if (class == 9){
+        class_8_u();
+        system("cls");
+        
+    }else if (class == 10){
+        class_10_u();
+        system("cls");
+        
+    } else{
+        printf( "Sorry their is not such class " );
+    }
+
+    //back to home 
+    printf( "Do you wanna Continue y or n " );
+    if(getch()== 'y' && 'Y'){
+        update_student();
+    } else {
+        menu();
     }
 }
 
