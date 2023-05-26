@@ -8,6 +8,7 @@
 // #include "read_db.c"
 // #include "line.c"
 #include "view.c"
+#include "update_db.c"
 
 // #define MAX 50
 void delete_db(void);
@@ -298,81 +299,13 @@ void delete_db()
 
 void update_student()
 {
-    char *_Path = "db/student/class-1.txt";
-    // char *_Path1 = "db/student/class-1.txt";  //test part
-    char *_Path_temp = "db/student/temp.txt";
-    FILE *main, *temp;
-    int max = 800;
-    char name[max], name1[max], dob[max], dob1[max], parent_name[max], parent_name1[max];
-    char addr[max], addr1[max];
-    long long int phone, phone1;
-    int check, status = 0;
-
-    main = fopen(_Path, "r");
-    temp = fopen(_Path_temp, "a");
-
-    printf("Enter name: ");
-    scanf("%s", &name1);
-    while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
-    {
-        check = strcmp(name, name1);
-        if (check == 0)
-        {
-            status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
-            scanf("%s", addr1);
-            printf("New DOB: ");
-            scanf("%s", &dob1);
-            printf("New Phone: ");
-            scanf("%lld", &phone1);
-            fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
-        }
-        else
-        {
-            fprintf(temp, "%s %s %s %s %lld\n", name, dob, addr, parent_name, phone);
-        }
+    int class;
+    printf("Enter class: ");
+    scanf("%d", &class);
+    if(class == 1){
+        class_1_u();
+        system("cls");
     }
-    if (status == 0)
-    {
-        printf("** Record Not found ** \n");
-    }
-
-    fclose(main);
-    fclose(temp);
-
-    // main = fopen("db/student/class1.txt","w");
-    // fclose(main);
-
-    temp = fopen(_Path_temp, "r");
-    main = fopen(_Path, "a+");
-    // while(fscanf(temp,"%s %s %s %s %lld",name,dob1,addr,parent_name,phone) != EOF){
-
-    //     fprintf(main,"%s %s %s %s %lld",name,dob,addr,parent_name,phone);
-    // }  //test code 
-    // opening main
-    main = fopen(_Path, "w");
-    if (main == NULL)
-    {
-        printf("Source file dosent exist!!\n");
-    }
-
-    // opening temp
-    temp = fopen(_Path_temp, "r");
-    if (temp == NULL)
-    {
-        printf("Error on updating file dosent exist!!\n");
-    }
-    //    copying
-    char ch;
-    while((ch = fgetc(temp)) != EOF){
-        putc(ch, main);
-    }
-    //closing file 
-    fclose(main);
-    fclose(temp);
-    temp = fopen(_Path_temp,"w");
-    fclose(temp);
 }
 
 void search()
