@@ -77,9 +77,7 @@ void menu()
     case '6':
         menu();
         break;
-    case '7':
-    logout();
-    break;    
+        
     default:
         system("cls");
         printf("invalid input \n");
@@ -98,17 +96,19 @@ void New_admission()
     //     // fclose(info);
     // }
     int class;
-    char name[MAX], parent_name[MAX], addr[MAX];
+    char name[MAX],last[MAX],parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
 
     printf("\tNew Admission \n");
     printf("\tEnter Students Detail\n");
-    Sleep(100);
-    printf("Name: ");
+    Sleep(50);
+    printf("First-Name: ");
     scanf("%s", &name);
+    printf( "Last-Name: " );
+    scanf("%s",&last);
     printf("Date of birth: ");
-    Sleep(100);
+    Sleep(50);
     scanf("%s", &dob);
     printf("Address: ");
     scanf("%s", &addr);
@@ -122,57 +122,66 @@ void New_admission()
     // printf("Name\t DOB \t address \t Class \t Parent name \t\t mobile no \n");
     // printf( "%s \t %s \t %s \t %d \t %s \t %lld \t",name,dob,addr,class,parent_name,phone );
     Name_data();
-    fprintf(info, "%d\t %s\t %s\t %lld\n", class, name, parent_name, phone);
+    fprintf(info, "%d\t %s-%s\t %s\t %lld\n", class,name, last, parent_name, phone);
     if (class == 1)
     {
         class_1();
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
     }
     else if (class == 2)
     {
         class_2();
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        
     }
     else if (class == 3)
     {
         class_3();
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        
     }
     else if (class == 4)
     {
         class_4();
 
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        
     }
     else if (class == 5)
     {
         class_5();
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        
     }
     else if (class == 6)
     {
         class_6();
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        
     }
     else if (class == 7)
     {
         class_7();
-        fprintf(info, "%s\t %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+       
     }
     else if (class == 8)
     {
         class_8();
-        fprintf(info, "%s\t %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+       
     }
     else if (class == 9)
     {
         class_9();
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        
     }
     else if (class == 10)
     {
         class_10();
-        fprintf(info, "%s\t  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        
     }
     else
     {
