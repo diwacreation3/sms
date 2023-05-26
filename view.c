@@ -42,7 +42,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 2;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -75,7 +75,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 3;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -108,7 +108,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 4;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -141,7 +141,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 5;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -174,7 +174,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 6;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -207,7 +207,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 7;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -240,7 +240,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 8;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -275,7 +275,7 @@ FILE *info_read;
         Sleep(300);
         system("cls");
     }
-    int class = 1;
+    int class = 9;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
@@ -309,7 +309,7 @@ FILE *info_read;
     if(info_read == NULL){
         printf( "Database is Empty!! " );
     }
-    int class = 1;
+    int class = 10;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
