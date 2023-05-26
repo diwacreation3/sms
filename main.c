@@ -17,11 +17,12 @@ project for BICTE 1st semester by Tribhuvan University
 #include "create_db.c"
 #include "view.c"
 #include "update_db.c"
+#include "t-gui.h"
 //end user defined library 
 
 
 // #define MAX 50
-void delete_db(void);
+
 void update_student(void);
 void menu(void);
 void search(void);
@@ -45,17 +46,26 @@ int main()
 }
 void menu()
 {
-    printf("______________________________\n");
-    printf("  School management system \n ");
-    printf("______________________________\n");
-    printf("1. New Admission \n");
-    printf("2. view student\n");
-    printf("3. delete student\n ");
-    printf("4. Update student\n");
-    printf("5. Search \n");
-    printf("6. Home\n");
-    printf("7. Logout\n");
-    printf("Enter your choice: \n");
+    system("cls");
+    Position(50,0);
+    printf( "\xb3\xdb\xdb School management system \xdb\xdb\xb3" );
+    Position(50,1);
+    printf( "\xb3\xdb\xdb Sharada Secondary School \xdb\xdb\xb3" );
+    Position(2,1);
+    printf( "Press key (S)hows inside. " );
+    Position(5,4);
+
+    printf( "\xb3\xdb (H)ome" );
+    Position(18,4);
+    printf( " (A)dmission " );
+    Position(32,4);
+    printf( " (V)iew" );
+    Position(50,4);
+    printf( " (M)dify" );
+    Position(65,4);
+    printf( "(S)earch" );
+    Position(72,4);
+    printf( " (L)og out \xdb\xb3" );
 
     switch (getch())
     {
@@ -66,18 +76,17 @@ void menu()
         view_students();
         break;
     case '3':
-        delete_db();
-        break;
-    case '4':
         update_student();
         break;
-    case '5':
+    case '4':
         search();
         break;
-    case '6':
+    case '5':
         menu();
         break;
-        
+    case '6':
+    exit(1);
+    break;    
     default:
         system("cls");
         printf("invalid input \n");
@@ -122,65 +131,65 @@ void New_admission()
     // printf("Name\t DOB \t address \t Class \t Parent name \t\t mobile no \n");
     // printf( "%s \t %s \t %s \t %d \t %s \t %lld \t",name,dob,addr,class,parent_name,phone );
     Name_data();
-    fprintf(info, "%d\t %s-%s\t %s\t %lld\n", class,name, last, parent_name, phone);
+    fprintf(info, "%d\t %s %s\t %s\t %lld\n", class,name, last, parent_name, phone);
     if (class == 1)
     {
         class_1();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
     }
     else if (class == 2)
     {
         class_2();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
         
     }
     else if (class == 3)
     {
         class_3();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
         
     }
     else if (class == 4)
     {
         class_4();
 
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
         
     }
     else if (class == 5)
     {
         class_5();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
         
     }
     else if (class == 6)
     {
         class_6();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
         
     }
     else if (class == 7)
     {
         class_7();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
        
     }
     else if (class == 8)
     {
         class_8();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
        
     }
     else if (class == 9)
     {
         class_9();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
         
     }
     else if (class == 10)
     {
         class_10();
-        fprintf(info, "%s-%s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
         
     }
     else
@@ -207,9 +216,14 @@ void New_admission()
 void view_students()
 {
     int class;
-    printf("\t\t View Student list");
-    printf("Enter class(1 to 10): ");
-    scanf("%d", &class);
+   printf( "S t u d e n t   D e t a i l \n" );
+   printf( "(S)imple view \n" );
+   printf( "(D)etail view \n" );
+   if(getch()== 's' && 'S'){
+    view_all();
+   }
+   printf( "Enter class(1 to 10): " );
+   scanf( "%d",&class );
 
     if (class == 1)
     {
@@ -264,65 +278,66 @@ void view_students()
 }
 // student viewing end
 
+//don't know what wrong with this code 🥱
 // delete student details
-void delete_db()
-{
-#define MAX 100
-    // char class_name[20];
-    // int class =1;
-    // if(class == 1){
-    //     class_name = "class-1";
-    //     return class_name;
-    // }
-    FILE *main, *temp;
-    char name[MAX], name1[MAX], parent_name[MAX], parent_name1[MAX], addr[MAX], addr1[MAX], dob[MAX], dob1[MAX];
-    long long int phone, phone1;
-    int res, f = 0;
+// void delete_db()
+// {
+// #define MAX 100
+//     // char class_name[20];
+//     // int class =1;
+//     // if(class == 1){
+//     //     class_name = "class-1";
+//     //     return class_name;
+//     // }
+//     FILE *main, *temp;
+//     char name[MAX], name1[MAX], parent_name[MAX], parent_name1[MAX], addr[MAX], addr1[MAX], dob[MAX], dob1[MAX];
+//     long long int phone, phone1;
+//     int res, f = 0;
 
-    main = fopen("db/student/class-1.txt", "r");
-    temp = fopen("db/temp/temp.txt", "a");
-    system("cls");
-    printf("Enter Student name that you want to delete: ");
-    gets(name1);
-    system("cls");
-    while (fscanf(main, "%s %s %s %s %lld", name, dob, &addr, parent_name, &phone) != EOF)
-    {
-        res = strcmp(name, name1);
-        if (res == 0)
-        {
-            f = 1;
-            printf("Record deleted sucessfully");
-        }
-        else
-        {
-            fprintf(temp, "%s \t %s\t %s\t %s\t %lld\t\n", name, dob, addr, parent_name, phone);
-        }
-        if (f == 0)
-        {
-            printf("\"%s\" Not Found!! ");
-        }
-        fclose(main);
-        fclose(temp);
+//     main = fopen("db/student/class-1.txt", "r");
+//     temp = fopen("db/temp/temp.txt", "a");
+//     system("cls");
+//     printf("Enter Student name that you want to delete: ");
+//     gets(name1);
+//     system("cls");
+//     while (fscanf(main, "%s %s %s %s %lld", name, dob, &addr, parent_name, &phone) != EOF)
+//     {
+//         res = strcmp(name, name1);
+//         if (res == 0)
+//         {
+//             f = 1;
+//             printf("Record deleted sucessfully");
+//         }
+//         else
+//         {
+//             fprintf(temp, "%s \t %s\t %s\t %s\t %lld\t\n", name, dob, addr, parent_name, phone);
+//         }
+//         if (f == 0)
+//         {
+//             printf("\"%s\" Not Found!! ");
+//         }
+//         fclose(main);
+//         fclose(temp);
 
-        main = fopen("db/student/class-1.txt", "w");
-        fclose(main);
-        main = fopen("db/student/class-1.txt", "r");
-        temp = fopen("db/temp/temp.txt", "w");
-        while (fscanf(temp, "%s %s %s %s %lld\n", name, dob, &addr, parent_name, &phone) != EOF)
-        {
-            fprintf(main, "%s\t %s\t %s\t %s\t %lld\t\n", name, dob, &addr, parent_name, &phone);
-        }
-        fclose(main);
-        fclose(temp);
-        temp = fopen("db/temp/temp.txt", "r");
-        fclose(temp);
-        printf("\n press y for mewnu \n");
-        if (getch() == 'y')
-        {
-            menu();
-        };
-    }
-}
+//         main = fopen("db/student/class-1.txt", "w");
+//         fclose(main);
+//         main = fopen("db/student/class-1.txt", "r");
+//         temp = fopen("db/temp/temp.txt", "w");
+//         while (fscanf(temp, "%s %s %s %s %lld\n", name, dob, &addr, parent_name, &phone) != EOF)
+//         {
+//             fprintf(main, "%s\t %s\t %s\t %s\t %lld\t\n", name, dob, &addr, parent_name, &phone);
+//         }
+//         fclose(main);
+//         fclose(temp);
+//         temp = fopen("db/temp/temp.txt", "r");
+//         fclose(temp);
+//         printf("\n press y for mewnu \n");
+//         if (getch() == 'y')
+//         {
+//             menu();
+//         };
+//     }
+// }
 
 void update_student()
 {
