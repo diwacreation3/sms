@@ -35,7 +35,7 @@ void class_8(){
  info = fopen("db/student/class-8.txt", "a+");
 }
 void class_9(){
- info = fopen("/db/student/class-9.txt", "a+");
+ info = fopen("db/student/class-9.txt", "a+");
 }
 void class_10(){
  info = fopen("db/student/class-10.txt", "a+");
