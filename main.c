@@ -27,6 +27,7 @@ void update_student(void);
 void About(void);
 void menu(void);
 void search(void);
+void logout(void);
 void New_admission(void);
 void view_students(void);
 int code = 0;
@@ -93,7 +94,7 @@ void menu()
         About();
         break;
     case '7':
-    exit(1);
+    logout();
     break;
     case '8':
     break;    
@@ -141,65 +142,65 @@ void New_admission()
     // printf("Name\t DOB \t address \t Class \t Parent name \t\t mobile no \n");
     // printf( "%s \t %s \t %s \t %d \t %s \t %lld \t",name,dob,addr,class,parent_name,phone );
     Name_data();
-    fprintf(info, "%d\t %s %s\t %s\t %lld\n", class,name, last, parent_name, phone);
+    fprintf(info, "%d\t %s \t %s\t %lld\n", class,name, parent_name, phone);
     if (class == 1)
     {
         class_1();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
     }
     else if (class == 2)
     {
         class_2();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
         
     }
     else if (class == 3)
     {
         class_3();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
         
     }
     else if (class == 4)
     {
         class_4();
 
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
         
     }
     else if (class == 5)
     {
         class_5();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
         
     }
     else if (class == 6)
     {
         class_6();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
         
     }
     else if (class == 7)
     {
         class_7();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
        
     }
     else if (class == 8)
     {
         class_8();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
        
     }
     else if (class == 9)
     {
         class_9();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
         
     }
     else if (class == 10)
     {
         class_10();
-        fprintf(info, "%s %s  %s\t %s \t %s \t %lld\t\n", name,last, dob, addr, parent_name, phone);
+        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
         
     }
     else
@@ -233,9 +234,9 @@ void view_students()
     view_all();
     printf( "Press Enter...." );
     getch();
-    view_students();
-   }
-   printf( " Enter class(1 to 10): " );
+    menu();
+   } else{
+ printf( " Enter class(1 to 10): " );
    scanf( "%d",&class );
 
     if (class == 1)
@@ -278,6 +279,8 @@ void view_students()
     {
         view_class_10();
     }
+   }
+  
 
     printf("Do you want to continue(y or n )... ");
     if (getch() == 'y' && 'Y')
@@ -425,7 +428,7 @@ void search()
 
     printf("\t\tSearch \n");
 
-    printf("Enter name ");
+    printf("Enter name: ");
     gets(name1);
     search_db = fopen("db/student-list.txt", "r+");
 
@@ -478,6 +481,8 @@ void About(){
     printf("\t\t| System Version  || V.0.1\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Language Used   || C \n");
+     printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf("\t\t| Duration        || 45 hour \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(includes windows stdlib), unistd\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
@@ -489,4 +494,19 @@ void About(){
     getch();
     menu();
       
+}
+
+void logout(){
+    system("cls");
+	Position(31,4);
+	printf("\xDB\xDB\xDB\xDB SUPPORT THIS PROJECT \xDB\xDB\xDB\xDB");
+	Position(31,6);
+	printf("\xDB CONTRIBUTE AND SHARE ");
+	Position(31,8);
+    printf("\xDB GIVE STAR ON GITHUB ");
+	Position(31,10);
+	printf("\xDB Github: https://github.com/diwacreation3");
+	Position(31,12);
+	printf( "Press enter for login panel" );
+    getch();
 }
