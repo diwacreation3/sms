@@ -271,23 +271,21 @@ FILE *info_read;
     int f;
     info_read = fopen("db/student/class-9.txt", "r");
     if(info_read == NULL){
-        printf( "\t\tDatabase is Empty!! " );
-        Sleep(300);
-        system("cls");
+        printf( "Database is Empty!! " );
     }
-    int class = 9;
-    char name[MAX],last[MAX] ,parent_name[MAX], addr[MAX];
+    int class = 10;
+    char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
     printf("\n");
     printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("| Class    Name        DOB            Address           Parent-Name         Phone No.       |\n");
     printf("+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
-    while (fscanf(info_read, "%s-%s %s %s  %s  %lld", name,last, dob, &addr, parent_name, &phone) != EOF)
+    while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
         printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
@@ -297,7 +295,6 @@ FILE *info_read;
     // Print border.
     printf("+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
-    system("cls");
 }
 
 //class 10
@@ -335,36 +332,22 @@ FILE *info_read;
 
 //view all
 void view_all(){
-FILE *info_read;
-    int MAX = 600;
-    int f;
-    info_read = fopen("db/student-list.txt", "r");
-    if(info_read == NULL){
-        printf( "Database is Empty!! " );
-        
-    }
-    int class ;
-    char name[MAX], parent_name[MAX];
-    long long int phone;
-    
-    // printf( "Enter class(1 to 10 ): " );
-    // scanf("%d",&class);
+  int MAX = 100;
+    FILE *read_db;
+    char name[MAX], Parent_name[MAX],addr[MAX];
+    int class;
+    unsigned long long int  Phone;
+
+    //opening file 
+    read_db= fopen("db/student-list.txt","r+");
     printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class     Name         Parent-Name         Phone No.          |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-
-    // Print data in tabular form.
-    int count;
-    while (fscanf(info_read, " %d %s %s  %lld",&class, name,  parent_name, &phone) != EOF)
+    printf("+--------------------------------------------------------------+\n");
+    printf("| Class        Name        Parent-Name         Phone No.       |\n");
+    printf("+--------------------------------------------------------------+\n");
+    while (fscanf(read_db,"%d %s %s %lld",&class,name,Parent_name,&Phone)!= EOF)
     {
-        printf("| %-*d  \t %-*s \t%-*s \t %-*lld\t  \n",
-               6, class, 15, name, 10, parent_name, 10, phone,10);
-         count+1;
-
+        printf( "|  %-*d\t %-*s\t %-*s %-*lld \n",10 ,class,10, name,10, Parent_name,15, Phone );
     }
-    // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    fclose(info_read);
-    printf( "Total student is %d \n",count );
+    printf("+--------------------------------------------------------------+\n");
+    fclose(read_db);
 }
