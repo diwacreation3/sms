@@ -14,9 +14,9 @@ project for BICTE 1st semester by Tribhuvan University
 //end standard library
 
 //start user defined library
-#include "create_db.c"
-#include "view.c"
-#include "update_db.c"
+#include "lib/create_db.c"
+#include "lib/view.c"
+#include "lib/update_db.c"
 #include "t-gui.h"
 //end user defined library 
 
@@ -28,6 +28,7 @@ void About(void);
 void menu(void);
 void search(void);
 void logout(void);
+void delete_db(void);
 void New_admission(void);
 void view_students(void);
 int code = 0;
@@ -43,36 +44,36 @@ int code = 0;
 
 int main()
 {
+    SetConsoleTitle(TEXT("School Management System SMS ")); //giving title for window 
+    SetWindowPos(GetConsoleWindow(), NULL, 0, 0, 400, 300, SWP_NOSIZE); // set fixed size of console where 0 0 is x y and 400 pixels wide and 300 pixels high
     menu();
     return 0;
 }
 void menu()
 {
     system("cls");
-    Position(40,0);
+    Position(30,1);
     printf( "\xb3\xdb\xdb S C H O O L  M A N A G E M E N T   S Y S T E M  \xdb\xdb\xb3" );
-    Position(50,2);
+    Position(40,2);
     printf( "\xb3\xdb\xdb Sharada Secondary School \xdb\xdb\xb3" );
-    Position(2,1);
-    printf( "Press number " );
     Position(1,4);
 
     printf( "\xb3\xdb 1.Home" );
-    Position(12,4);
+    Position(15,4);
     printf( " 2.Admission " );
-    Position(26,4);
+    Position(30,4);
     printf( " 3.View" );
-    Position(36,4);
+    Position(45,4);
     printf( " 4.Modify" );
-    Position(48,4);
-    printf( "5.Search" );
     Position(60,4);
+    printf( "5.Search" );
+    Position(75,4);
     printf( "6.About" );
-    Position(72,4);
+    Position(90,4);
     printf( " 7.Log out" );
-    Position(84,4);
-    printf( "8.Help  \xdb\xb3 \n" );
-
+    Position(105,4);
+    printf( "8.delete  \xdb\xb3 \n" );
+ 
     switch (getch())
     {
     case '1':
@@ -97,6 +98,7 @@ void menu()
     logout();
     break;
     case '8':
+    delete_db();
     break;    
     default:
         system("cls");
@@ -296,64 +298,64 @@ void view_students()
 
 //don't know what wrong with this code 🥱
 // delete student details
-// void delete_db()
-// {
-// #define MAX 100
-//     // char class_name[20];
-//     // int class =1;
-//     // if(class == 1){
-//     //     class_name = "class-1";
-//     //     return class_name;
-//     // }
-//     FILE *main, *temp;
-//     char name[MAX], name1[MAX], parent_name[MAX], parent_name1[MAX], addr[MAX], addr1[MAX], dob[MAX], dob1[MAX];
-//     long long int phone, phone1;
-//     int res, f = 0;
+void delete_db()
+{
+    int MAX = 100;
+    // char class_name[20];
+    // int class =1;
+    // if(class == 1){
+    //     class_name = "class-1";
+    //     return class_name;
+    // }
+    FILE *main, *temp;
+    char name[MAX], name1[MAX], parent_name[MAX], parent_name1[MAX], addr[MAX], addr1[MAX], dob[MAX], dob1[MAX];
+    long long int phone, phone1;
+    int res, f = 0;
 
-//     main = fopen("db/student/class-1.txt", "r");
-//     temp = fopen("db/temp/temp.txt", "a");
-//     system("cls");
-//     printf("Enter Student name that you want to delete: ");
-//     gets(name1);
-//     system("cls");
-//     while (fscanf(main, "%s %s %s %s %lld", name, dob, &addr, parent_name, &phone) != EOF)
-//     {
-//         res = strcmp(name, name1);
-//         if (res == 0)
-//         {
-//             f = 1;
-//             printf("Record deleted sucessfully");
-//         }
-//         else
-//         {
-//             fprintf(temp, "%s \t %s\t %s\t %s\t %lld\t\n", name, dob, addr, parent_name, phone);
-//         }
-//         if (f == 0)
-//         {
-//             printf("\"%s\" Not Found!! ");
-//         }
-//         fclose(main);
-//         fclose(temp);
+    main = fopen("db/student/class-1.txt", "r");
+    temp = fopen("db/temp/temp.txt", "a");
+    system("cls");
+    printf("Enter Student name that you want to delete: ");
+    gets(name1);
+    system("cls");
+    while (fscanf(main, "%s %s %s %s %lld", name, dob, &addr, parent_name, &phone) != EOF)
+    {
+        res = strcmp(name, name1);
+        if (res == 0)
+        {
+            f = 1;
+            printf("Record deleted sucessfully");
+        }
+        else
+        {
+            fprintf(temp, "%s \t %s\t %s\t %s\t %lld\t\n", name, dob, addr, parent_name, phone);
+        }
+        if (f == 0)
+        {
+            printf("\"%s\" Not Found!! ");
+        }
+        fclose(main);
+        fclose(temp);
 
-//         main = fopen("db/student/class-1.txt", "w");
-//         fclose(main);
-//         main = fopen("db/student/class-1.txt", "r");
-//         temp = fopen("db/temp/temp.txt", "w");
-//         while (fscanf(temp, "%s %s %s %s %lld\n", name, dob, &addr, parent_name, &phone) != EOF)
-//         {
-//             fprintf(main, "%s\t %s\t %s\t %s\t %lld\t\n", name, dob, &addr, parent_name, &phone);
-//         }
-//         fclose(main);
-//         fclose(temp);
-//         temp = fopen("db/temp/temp.txt", "r");
-//         fclose(temp);
-//         printf("\n press y for mewnu \n");
-//         if (getch() == 'y')
-//         {
-//             menu();
-//         };
-//     }
-// }
+        main = fopen("db/student/class-1.txt", "w");
+        fclose(main);
+        main = fopen("db/student/class-1.txt", "r");
+        temp = fopen("db/temp/temp.txt", "w");
+        while (fscanf(temp, "%s %s %s %s %lld\n", name, dob, &addr, parent_name, &phone) != EOF)
+        {
+            fprintf(main, "%s\t %s\t %s\t %s\t %lld\t\n", name, dob, &addr, parent_name, &phone);
+        }
+        fclose(main);
+        fclose(temp);
+        temp = fopen("db/temp/temp.txt", "r");
+        fclose(temp);
+        printf("\n press y for mewnu \n");
+        if (getch() == 'y')
+        {
+            menu();
+        };
+    }
+}
 
 void update_student()
 {
