@@ -24,6 +24,7 @@ project for BICTE 1st semester by Tribhuvan University
 // #define MAX 50
 
 void update_student(void);
+void About(void);
 void menu(void);
 void search(void);
 void New_admission(void);
@@ -47,45 +48,54 @@ int main()
 void menu()
 {
     system("cls");
-    Position(50,0);
-    printf( "\xb3\xdb\xdb School management system \xdb\xdb\xb3" );
-    Position(50,1);
+    Position(40,0);
+    printf( "\xb3\xdb\xdb S C H O O L  M A N A G E M E N T   S Y S T E M  \xdb\xdb\xb3" );
+    Position(50,2);
     printf( "\xb3\xdb\xdb Sharada Secondary School \xdb\xdb\xb3" );
     Position(2,1);
-    printf( "Press key (S)hows inside. " );
-    Position(5,4);
+    printf( "Press number " );
+    Position(1,4);
 
-    printf( "\xb3\xdb (H)ome" );
-    Position(18,4);
-    printf( " (A)dmission " );
-    Position(32,4);
-    printf( " (V)iew" );
-    Position(50,4);
-    printf( " (M)dify" );
-    Position(65,4);
-    printf( "(S)earch" );
+    printf( "\xb3\xdb 1.Home" );
+    Position(12,4);
+    printf( " 2.Admission " );
+    Position(26,4);
+    printf( " 3.View" );
+    Position(36,4);
+    printf( " 4.Modify" );
+    Position(48,4);
+    printf( "5.Search" );
+    Position(60,4);
+    printf( "6.About" );
     Position(72,4);
-    printf( " (L)og out \xdb\xb3" );
+    printf( " 7.Log out" );
+    Position(84,4);
+    printf( "8.Help  \xdb\xb3 \n" );
 
     switch (getch())
     {
     case '1':
+     menu();
+     break;    
+    case '2':
         New_admission();
         break;
-    case '2':
+    case '3':
         view_students();
         break;
-    case '3':
+    case '4':
         update_student();
         break;
-    case '4':
+    case '5':
         search();
         break;
-    case '5':
-        menu();
+        case '6':
+        About();
         break;
-    case '6':
+    case '7':
     exit(1);
+    break;
+    case '8':
     break;    
     default:
         system("cls");
@@ -217,12 +227,15 @@ void view_students()
 {
     int class;
    printf( "S t u d e n t   D e t a i l \n" );
-   printf( "(S)imple view \n" );
-   printf( "(D)etail view \n" );
+   printf( " (S)imple view \n" );
+   printf( " (D)etail view \n" );
    if(getch()== 's' && 'S'){
     view_all();
+    printf( "Press Enter...." );
+    getch();
+    view_students();
    }
-   printf( "Enter class(1 to 10): " );
+   printf( " Enter class(1 to 10): " );
    scanf( "%d",&class );
 
     if (class == 1)
@@ -413,7 +426,7 @@ void search()
     printf("\t\tSearch \n");
 
     printf("Enter name ");
-    scanf("%s", &name1);
+    gets(name1);
     search_db = fopen("db/student-list.txt", "r+");
 
     while (fscanf(search_db, "%d %s %s %lld", &class, &name, &parent_name, &phone) != EOF)
@@ -442,7 +455,7 @@ void search()
     {
         system("cls");
         printf("\t\tNo record found!!!\\n");
-        printf("enter the name correctly press s to continue!!!\n\n");
+        printf(" Press S to continue!!!\n\n");
         if (getch() == 's')
         {
             system("cls");
@@ -450,4 +463,30 @@ void search()
         }
     }
     fclose(search_db);
+}
+
+void About(){
+   system("cls");
+    system("color 1");
+    printf("\t\t+--------------------------------------------------------------------------------------+\n");
+    printf("\t\t\t\t\t\xb3\xdb\xdb School Management System \xdb\xdb\xb3 \n");
+    printf("\t\t+--------------------------------------------------------------------------------------+\n\n");
+    printf("\t\t\xb1\xb1\xb3 About System \xb3\xb1\xb1\n");
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf("\t\t| System Name     || School Management System\n");
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf("\t\t| System Version  || V.0.1\n");
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf("\t\t| Language Used   || C \n");
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(includes windows stdlib), unistd\n");
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf( "\t\t| CopyRight 2023 School Management System. All Rights Reserved  \n" );
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf( "\t\t| Project Link: https://github.com/diwacreation3  \n" );
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf( "\n press any key...." );
+    getch();
+    menu();
+      
 }
