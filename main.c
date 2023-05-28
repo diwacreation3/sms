@@ -54,24 +54,24 @@ void menu()
     system("cls");
     Position(30,1);
     printf( "\xb3\xdb\xdb S C H O O L  M A N A G E M E N T   S Y S T E M  \xdb\xdb\xb3" );
-    Position(40,2);
+    Position(40,3);
     printf( "\xb3\xdb\xdb Sharada Secondary School \xdb\xdb\xb3" );
-    Position(1,4);
+    Position(1,5);
 
     printf( "\xb3\xdb 1.Home" );
-    Position(15,4);
+    Position(15,5);
     printf( " 2.Admission " );
-    Position(30,4);
+    Position(30,5);
     printf( " 3.View" );
-    Position(45,4);
+    Position(45,5);
     printf( " 4.Modify" );
-    Position(60,4);
+    Position(60,5);
     printf( "5.Search" );
-    Position(75,4);
+    Position(75,5);
     printf( "6.About" );
-    Position(90,4);
+    Position(90,5);
     printf( " 7.Log out" );
-    Position(105,4);
+    Position(105,5);
     printf( "8.delete  \xdb\xb3 \n" );
  
     switch (getch())
@@ -121,30 +121,48 @@ void New_admission()
     char name[MAX],last[MAX],parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
+    Position(36,8);
+    printf("\xdb\xdb\xb3 N E W   A D M I S S I O N \xb3\xdb\xdb \n");
 
-    printf("\tNew Admission \n");
-    printf("\tEnter Students Detail\n");
+    Position(30,10);
+    printf("\xb2\xb3 CREATE NEW STUDENT \xb2\xb3\n");
     Sleep(50);
-    printf("First-Name: ");
+    Position(30,12);
+
+    printf("\xdb\xb3 First-Name: ");
     scanf("%s", &name);
-    printf( "Last-Name: " );
+    Position(30,14);
+
+    printf( "\xdb\xb3 Last-Name: " );
     scanf("%s",&last);
-    printf("Date of birth: ");
+    Position(30,16);
+
+    printf("\xdb\xb3 Date of birth: ");
     Sleep(50);
     scanf("%s", &dob);
-    printf("Address: ");
+    Position(30,18);
+
+    printf("\xdb\xb3 Address: ");
     scanf("%s", &addr);
-    printf("Class to enroll(1 to 10): ");
+    Position(30,20);
+    printf("\xdb\xb3 Class to enroll(1 to 10): ");
     scanf("%d", &class);
-    printf("Parent name: ");
+    Position(30,22);
+
+    printf("\xdb\xb3 Parent name: ");
     scanf("%s", &parent_name);
-    printf("Parent mobile no: ");
+    Position(30,24);
+
+    printf("\xdb\xb3 Parent mobile no: ");
     scanf("%lld", &phone);
 
     // printf("Name\t DOB \t address \t Class \t Parent name \t\t mobile no \n");
     // printf( "%s \t %s \t %s \t %d \t %s \t %lld \t",name,dob,addr,class,parent_name,phone );
-    Name_data();
-    fprintf(info, "%d\t %s \t %s\t %lld\n", class,name, parent_name, phone);
+    if(class < 11){
+       Name_data();
+    fprintf(info, "%d\t %s \t %s\t %lld\n", class,name, parent_name, phone);  
+    }
+   
     if (class == 1)
     {
         class_1();
@@ -207,11 +225,14 @@ void New_admission()
     }
     else
     {
-        printf("We teach only upto class 10 \n");
+        system("cls");
+        Position(30,26);
+        printf("\xb3\xb2 We teach only upto class 10 \n");
     }
 
     fclose(info);
-    printf("Do you wanna continue Y(yes) or N(no) \n");
+    Position(30,28);
+    printf(" \xb3\xb1 Do you wanna continue Y(continue) or N(menu) \xb1\xb3 \n");
     // prompt to enter data
     if (getch() == 'y' && 'Y')
     {
