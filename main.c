@@ -11,6 +11,9 @@ project for BICTE 1st semester by Tribhuvan University
 #include <windows.h>
 #include <conio.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 // end standard library
 
 // start user defined library
@@ -18,7 +21,9 @@ project for BICTE 1st semester by Tribhuvan University
 #include "lib/view.c"
 #include "lib/update_db.c"
 #include "t-gui.h"
+
 #include "on_board.c"
+
 // end user defined library
 
 // #define MAX 50
@@ -45,6 +50,9 @@ int code = 0;
 
 int main()
 {
+    
+   
+    system("cls");
     system("color B");
     FILE *read;
     read = fopen("db/school.txt","r");
@@ -494,7 +502,7 @@ void About()
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Duration        || 45 hour \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(includes windows stdlib), unistd\n");
+    printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(windows stdlib), unistd,types,stat\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| CopyRight 2023 School Management System. All Rights Reserved  \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
@@ -541,12 +549,12 @@ void login_panel(){
     Position(3,3);
     printf( "Press q to exit" );
     Position(38, 6);
-    printf("\xb3\xb0 LOGIN AS \xb0\xb3");
+    printf("\xb3\xb0 LOGIN AS A D M I N \xb0\xb3");
     // Position(35, 9);
     // printf("\xb3\xdb\xdb 1. SUPER ADMIN ");
-    Position(35, 12);
-    printf("\xb3\xdb\xdb  A D M I N \n");
-    login();
+    // Position(35, 12);
+    // printf("\xb3\xdb\xdb  A D M I N \n");
+   
     // if (getch() == '1')
     // {
     //     login();
@@ -564,10 +572,9 @@ void login_panel(){
     }
     else
     {
-        printf("\xb3\xb\xdb Invalid Key \n");
-        main();
+      login();  
     }
-    
+     
     
 }
 void login(){
