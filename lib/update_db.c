@@ -15,8 +15,7 @@ void class_1_u(){
 
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
-
-    printf("Enter name: ");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -24,12 +23,12 @@ void class_1_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -40,7 +39,7 @@ void class_1_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -95,7 +94,9 @@ void class_2_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+   main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -103,12 +104,12 @@ void class_2_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -119,7 +120,7 @@ void class_2_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -174,7 +175,9 @@ void class_3_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+   main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -182,12 +185,12 @@ void class_3_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -198,7 +201,7 @@ void class_3_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -254,7 +257,9 @@ void class_4_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+    main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -262,12 +267,12 @@ void class_4_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -278,7 +283,7 @@ void class_4_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -333,7 +338,9 @@ void class_5_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+   main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -341,12 +348,12 @@ void class_5_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -357,7 +364,7 @@ void class_5_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -413,7 +420,9 @@ void class_6_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+   main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -421,12 +430,12 @@ void class_6_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -437,7 +446,7 @@ void class_6_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -492,7 +501,9 @@ void class_7_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+   main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -500,12 +511,12 @@ void class_7_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -516,7 +527,7 @@ void class_7_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -571,7 +582,9 @@ void class_8_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+   main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -579,12 +592,12 @@ void class_8_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -595,7 +608,7 @@ void class_8_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
@@ -650,7 +663,9 @@ void class_9_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter name: ");
+    main = fopen(_Path, "r");
+    temp = fopen(_Path_temp, "a");
+    printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -658,12 +673,12 @@ void class_9_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -674,9 +689,8 @@ void class_9_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
-
     fclose(main);
     fclose(temp);
 
@@ -729,7 +743,7 @@ void class_10_u(){
     main = fopen(_Path, "r");
     temp = fopen(_Path_temp, "a");
 
-    printf("Enter Student Name: ");
+   printf("\n\t\t\t\t\xdb\xb3 Enter name: ");
     scanf("%s", &name1);
     while (fscanf(main, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
@@ -737,12 +751,12 @@ void class_10_u(){
         if (check == 0)
         {
             status = 1;
-            printf("\t\t ** Modify section opened **\n\n");
-            printf("New address: ");
+            printf("\n\n\t\t\t\xb3\xdb\xdb\xdb M O D I F I C A T I O N   S E C T I O N  \xdb\xdb\xdb\xb3 ");
+            printf("\n\t\t\t\xb3\xb2 New address: ");
             scanf("%s", addr1);
-            printf("New DOB: ");
+            printf("\n\t\t\t\xb3\xb2 New DOB: ");
             scanf("%s", &dob1);
-            printf("New Phone: ");
+            printf("\n\t\t\t\xb3\xb2 New Phone: ");
             scanf("%lld", &phone1);
             fprintf(temp, "%s %s %s %s %lld\n", name, dob1, addr1, parent_name, phone1);
         }
@@ -753,7 +767,7 @@ void class_10_u(){
     }
     if (status == 0)
     {
-        printf("** Record Not found ** \n");
+        printf("\t\t\xb3\xdb\xdb Record Not found \xb3\xdb\xdb \n");
     }
 
     fclose(main);
