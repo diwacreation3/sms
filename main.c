@@ -4,22 +4,21 @@ Github: https://github.com/diwacreation3
 Project type: School management system
 
 project for BICTE 1st semester by Tribhuvan University
-*/ 
-//start standard library
+*/
+// start standard library
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
 #include <conio.h>
 #include <unistd.h>
-//end standard library
+// end standard library
 
-//start user defined library
+// start user defined library
 #include "lib/create_db.c"
 #include "lib/view.c"
 #include "lib/update_db.c"
 #include "t-gui.h"
-//end user defined library 
-
+// end user defined library
 
 // #define MAX 50
 
@@ -44,7 +43,7 @@ int code = 0;
 
 int main()
 {
-    SetConsoleTitle(TEXT("School Management System SMS ")); //giving title for window 
+    SetConsoleTitle(TEXT("School Management System SMS "));             // giving title for window
     SetWindowPos(GetConsoleWindow(), NULL, 0, 0, 400, 300, SWP_NOSIZE); // set fixed size of console where 0 0 is x y and 400 pixels wide and 300 pixels high
     menu();
     return 0;
@@ -52,33 +51,33 @@ int main()
 void menu()
 {
     system("cls");
-    Position(30,1);
-    printf( "\xb3\xdb\xdb S C H O O L  M A N A G E M E N T   S Y S T E M  \xdb\xdb\xb3" );
-    Position(40,3);
-    printf( "\xb3\xdb\xdb Sharada Secondary School \xdb\xdb\xb3" );
-    Position(1,5);
+    Position(30, 1);
+    printf("\xb3\xdb\xdb S C H O O L  M A N A G E M E N T   S Y S T E M  \xdb\xdb\xb3");
+    Position(40, 3);
+    printf("\xb3\xdb\xdb Sharada Secondary School \xdb\xdb\xb3");
+    Position(1, 5);
 
-    printf( "\xb3\xdb 1.Home" );
-    Position(15,5);
-    printf( " 2.Admission " );
-    Position(30,5);
-    printf( " 3.View" );
-    Position(45,5);
-    printf( " 4.Modify" );
-    Position(60,5);
-    printf( "5.Search" );
-    Position(75,5);
-    printf( "6.About" );
-    Position(90,5);
-    printf( " 7.Log out" );
-    Position(105,5);
-    printf( "8.delete  \xdb\xb3 \n" );
- 
+    printf("\xb3\xdb 1.Home");
+    Position(15, 5);
+    printf(" 2.Admission ");
+    Position(30, 5);
+    printf(" 3.View");
+    Position(45, 5);
+    printf(" 4.Modify");
+    Position(60, 5);
+    printf("5.Search");
+    Position(75, 5);
+    printf("6.About");
+    Position(90, 5);
+    printf(" 7.Log out");
+    Position(105, 5);
+    printf("8.delete  \xdb\xb3 \n");
+
     switch (getch())
     {
     case '1':
-     menu();
-     break;    
+        menu();
+        break;
     case '2':
         New_admission();
         break;
@@ -91,22 +90,21 @@ void menu()
     case '5':
         search();
         break;
-        case '6':
+    case '6':
         About();
         break;
     case '7':
-    logout();
-    break;
+        logout();
+        break;
     case '8':
-    delete_db();
-    break;    
+        delete_db();
+        break;
     default:
         system("cls");
         printf("invalid input \n");
-        printf( "Press any key.." );
+        printf("Press any key..");
         getch();
         main();
-        
     }
 }
 // admission function start
@@ -118,51 +116,52 @@ void New_admission()
     //     // fclose(info);
     // }
     int class;
-    char name[MAX],last[MAX],parent_name[MAX], addr[MAX];
+    char name[MAX], last[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
-    Position(36,8);
+    Position(36, 8);
     printf("\xdb\xdb\xb3 N E W   A D M I S S I O N \xb3\xdb\xdb \n");
 
-    Position(30,10);
+    Position(30, 10);
     printf("\xb2\xb3 CREATE NEW STUDENT \xb2\xb3\n");
     Sleep(50);
-    Position(30,12);
+    Position(30, 12);
 
     printf("\xdb\xb3 First-Name: ");
     scanf("%s", &name);
-    Position(30,14);
+    Position(30, 14);
 
-    printf( "\xdb\xb3 Last-Name: " );
-    scanf("%s",&last);
-    Position(30,16);
+    printf("\xdb\xb3 Last-Name: ");
+    scanf("%s", &last);
+    Position(30, 16);
 
     printf("\xdb\xb3 Date of birth: ");
     Sleep(50);
     scanf("%s", &dob);
-    Position(30,18);
+    Position(30, 18);
 
     printf("\xdb\xb3 Address: ");
     scanf("%s", &addr);
-    Position(30,20);
+    Position(30, 20);
     printf("\xdb\xb3 Class to enroll(1 to 10): ");
     scanf("%d", &class);
-    Position(30,22);
+    Position(30, 22);
 
     printf("\xdb\xb3 Parent name: ");
     scanf("%s", &parent_name);
-    Position(30,24);
+    Position(30, 24);
 
     printf("\xdb\xb3 Parent mobile no: ");
     scanf("%lld", &phone);
 
     // printf("Name\t DOB \t address \t Class \t Parent name \t\t mobile no \n");
     // printf( "%s \t %s \t %s \t %d \t %s \t %lld \t",name,dob,addr,class,parent_name,phone );
-    if(class < 11){
-       Name_data();
-    fprintf(info, "%d\t %s \t %s\t %lld\n", class,name, parent_name, phone);  
+    if (class < 11)
+    {
+        Name_data();
+        fprintf(info, "%d\t %s \t %s\t %lld\n", class, name, parent_name, phone);
     }
-   
+
     if (class == 1)
     {
         class_1();
@@ -172,66 +171,57 @@ void New_admission()
     {
         class_2();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-        
     }
     else if (class == 3)
     {
         class_3();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-        
     }
     else if (class == 4)
     {
         class_4();
 
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-        
     }
     else if (class == 5)
     {
         class_5();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-        
     }
     else if (class == 6)
     {
         class_6();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-        
     }
     else if (class == 7)
     {
         class_7();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-       
     }
     else if (class == 8)
     {
         class_8();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-       
     }
     else if (class == 9)
     {
         class_9();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-        
     }
     else if (class == 10)
     {
         class_10();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
-        
     }
     else
     {
         system("cls");
-        Position(30,26);
+        Position(30, 26);
         printf("\xb3\xb2 We teach only upto class 10 \n");
     }
 
     fclose(info);
-    Position(30,28);
+    Position(30, 28);
     printf(" \xb3\xb1 Do you wanna continue Y(continue) or N(menu) \xb1\xb3 \n");
     // prompt to enter data
     if (getch() == 'y' && 'Y')
@@ -250,62 +240,73 @@ void New_admission()
 void view_students()
 {
     int class;
-   printf( "S t u d e n t   D e t a i l \n" );
-   printf( " (S)imple view \n" );
-   printf( " (D)etail view \n" );
-   if(getch()== 's' && 'S'){
-    view_all();
-    printf( "Press Enter...." );
-    getch();
-    menu();
-   } else{
- printf( " Enter class(1 to 10): " );
-   scanf( "%d",&class );
+    system("cls");
+    Position(35, 3);
+    printf("\xb3\xb2\xb2 S t u d e n t   D e t a i l \xb2\xb2\xb3 \n");
+    Position(30, 5);
+    printf("\xdb\xb3 (S)imple view \n");
+    Position(30, 7);
+    printf("\xdb\xb3 (D)etail view \n");
+    if (getch() == 's' && 'S')
+    {
+        view_all();
+        Position(30, 8);
+        printf("\xb2\xb2 Press Enter....");
+        getch();
+        menu();
+    }
+    else
+    {
+        Position(30, 9);
+        printf("\xdb\xb3 Enter class(1 to 10): ");
+        scanf("%d", &class);
+        if (class > 10) //check if class i geater than 10
+        {
+            printf("\n \xb2\xb3 Oppss We Don't Have That Class \n");
+        }
+        if (class == 1)
+        {
+            view_class_1();
+        }
+        else if (class == 2)
+        {
+            view_class_2();
+        }
+        else if (class == 3)
+        {
+            view_class_3();
+        }
+        else if (class == 4)
+        {
+            view_class_4();
+        }
+        else if (class == 5)
+        {
+            view_class_5();
+        }
+        else if (class == 6)
+        {
+            view_class_6();
+        }
+        else if (class == 7)
+        {
+            view_class_7();
+        }
+        else if (class == 8)
+        {
+            view_class_8();
+        }
+        else if (class == 9)
+        {
+            view_class_9();
+        }
+        else if (class == 10)
+        {
+            view_class_10();
+        }
+    }
 
-    if (class == 1)
-    {
-        view_class_1();
-    }
-    else if (class == 2)
-    {
-        view_class_2();
-    }
-    else if (class == 3)
-    {
-        view_class_3();
-    }
-    else if (class == 4)
-    {
-        view_class_4();
-    }
-    else if (class == 5)
-    {
-        view_class_5();
-    }
-    else if (class == 6)
-    {
-        view_class_6();
-    }
-    else if (class == 7)
-    {
-        view_class_7();
-    }
-    else if (class == 8)
-    {
-        view_class_8();
-    }
-    else if (class == 9)
-    {
-        view_class_9();
-    }
-    else if (class == 10)
-    {
-        view_class_10();
-    }
-   }
-  
-
-    printf("Do you want to continue(y or n )... ");
+    printf("\xb1\xb3 Do you want to continue(y or n )... ");
     if (getch() == 'y' && 'Y')
     {
         view_students();
@@ -317,124 +318,82 @@ void view_students()
 }
 // student viewing end
 
-//don't know what wrong with this code 🥱
-// delete student details
-void delete_db()
-{
-    int MAX = 100;
-    // char class_name[20];
-    // int class =1;
-    // if(class == 1){
-    //     class_name = "class-1";
-    //     return class_name;
-    // }
-    FILE *main, *temp;
-    char name[MAX], name1[MAX], parent_name[MAX], parent_name1[MAX], addr[MAX], addr1[MAX], dob[MAX], dob1[MAX];
-    long long int phone, phone1;
-    int res, f = 0;
-
-    main = fopen("db/student/class-1.txt", "r");
-    temp = fopen("db/temp/temp.txt", "a");
-    system("cls");
-    printf("Enter Student name that you want to delete: ");
-    gets(name1);
-    system("cls");
-    while (fscanf(main, "%s %s %s %s %lld", name, dob, &addr, parent_name, &phone) != EOF)
-    {
-        res = strcmp(name, name1);
-        if (res == 0)
-        {
-            f = 1;
-            printf("Record deleted sucessfully");
-        }
-        else
-        {
-            fprintf(temp, "%s \t %s\t %s\t %s\t %lld\t\n", name, dob, addr, parent_name, phone);
-        }
-        if (f == 0)
-        {
-            printf("\"%s\" Not Found!! ");
-        }
-        fclose(main);
-        fclose(temp);
-
-        main = fopen("db/student/class-1.txt", "w");
-        fclose(main);
-        main = fopen("db/student/class-1.txt", "r");
-        temp = fopen("db/temp/temp.txt", "w");
-        while (fscanf(temp, "%s %s %s %s %lld\n", name, dob, &addr, parent_name, &phone) != EOF)
-        {
-            fprintf(main, "%s\t %s\t %s\t %s\t %lld\t\n", name, dob, &addr, parent_name, &phone);
-        }
-        fclose(main);
-        fclose(temp);
-        temp = fopen("db/temp/temp.txt", "r");
-        fclose(temp);
-        printf("\n press y for mewnu \n");
-        if (getch() == 'y')
-        {
-            menu();
-        };
-    }
-}
+// don't know what wrong with this code 🥱
 
 void update_student()
 {
     int class;
-    printf("Enter class: ");
+    printf( "\xb3\xdb U P D A T E   S T U D E N T  D E T A I L \xdb\xb3" );
+    printf("\xdb\xb3 Enter class: ");
     scanf("%d", &class);
-    if(class == 1){
-        class_1_u(); //calling class-1 update function 
+    if (class == 1)
+    {
+        class_1_u(); // calling class-1 update function
         system("cls");
-    } else if (class == 2){
+    }
+    else if (class == 2)
+    {
         class_2_u();
         system("cls");
-
-    } else if (class == 3){
+    }
+    else if (class == 3)
+    {
         class_3_u();
         system("cls");
-        
-    }else if (class == 3){
+    }
+    else if (class == 3)
+    {
         class_3_u();
         system("cls");
-        
-    }else if (class == 4){
+    }
+    else if (class == 4)
+    {
         class_4_u();
         system("cls");
-        
-    }else if (class == 5){
+    }
+    else if (class == 5)
+    {
         class_5_u();
         system("cls");
-        
-    }else if (class == 6){
+    }
+    else if (class == 6)
+    {
         class_6_u();
         system("cls");
-        
-    }else if (class == 7){
+    }
+    else if (class == 7)
+    {
         class_7_u();
         system("cls");
-        
-    }else if (class == 8){
+    }
+    else if (class == 8)
+    {
         class_8_u();
         system("cls");
-        
-    }else if (class == 9){
+    }
+    else if (class == 9)
+    {
         class_8_u();
         system("cls");
-        
-    }else if (class == 10){
+    }
+    else if (class == 10)
+    {
         class_10_u();
         system("cls");
-        
-    } else{
-        printf( "Sorry their is not such class " );
+    }
+    else
+    {
+        printf("Sorry their is not such class ");
     }
 
-    //back to home 
-    printf( "Do you wanna Continue y or n " );
-    if(getch()== 'y' && 'Y'){
+    // back to home
+    printf("Do you wanna Continue y or n ");
+    if (getch() == 'y' && 'Y')
+    {
         update_student();
-    } else {
+    }
+    else
+    {
         menu();
     }
 }
@@ -491,8 +450,9 @@ void search()
     fclose(search_db);
 }
 
-void About(){
-   system("cls");
+void About()
+{
+    system("cls");
     system("color 1");
     printf("\t\t+--------------------------------------------------------------------------------------+\n");
     printf("\t\t\t\t\t\xb3\xdb\xdb School Management System \xdb\xdb\xb3 \n");
@@ -504,32 +464,32 @@ void About(){
     printf("\t\t| System Version  || V.0.1\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Language Used   || C \n");
-     printf("\t\t+---------------------------------------------------------------------------------+\n");
+    printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Duration        || 45 hour \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(includes windows stdlib), unistd\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf( "\t\t| CopyRight 2023 School Management System. All Rights Reserved  \n" );
+    printf("\t\t| CopyRight 2023 School Management System. All Rights Reserved  \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf( "\t\t| Project Link: https://github.com/diwacreation3  \n" );
+    printf("\t\t| Project Link: https://github.com/diwacreation3  \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf( "\n press any key...." );
+    printf("\n press any key....");
     getch();
     menu();
-      
 }
 
-void logout(){
+void logout()
+{
     system("cls");
-	Position(31,4);
-	printf("\xDB\xDB\xDB\xDB SUPPORT THIS PROJECT \xDB\xDB\xDB\xDB");
-	Position(31,6);
-	printf("\xDB CONTRIBUTE AND SHARE ");
-	Position(31,8);
+    Position(31, 4);
+    printf("\xDB\xDB\xDB\xDB SUPPORT THIS PROJECT \xDB\xDB\xDB\xDB");
+    Position(31, 6);
+    printf("\xDB CONTRIBUTE AND SHARE ");
+    Position(31, 8);
     printf("\xDB GIVE STAR ON GITHUB ");
-	Position(31,10);
-	printf("\xDB Github: https://github.com/diwacreation3");
-	Position(31,12);
-	printf( "Press enter for login panel" );
+    Position(31, 10);
+    printf("\xDB Github: https://github.com/diwacreation3");
+    Position(31, 12);
+    printf("Press enter for login panel");
     getch();
 }
