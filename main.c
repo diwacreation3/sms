@@ -51,9 +51,9 @@ int code = 0;
 int main()
 {
     
-   
-    system("cls");
     system("color B");
+    system("cls");
+    
     FILE *read;
     read = fopen("db/school.txt","r");
     SetConsoleTitle(TEXT("School Management System SMS "));             // giving title for window
@@ -126,7 +126,7 @@ void menu()
         printf("invalid input \n");
         printf("Press any key..");
         getch();
-        main();
+        menu();
     }
 }
 // admission function start
@@ -549,7 +549,7 @@ void login_panel(){
     Position(3,3);
     printf( "Press q to exit" );
     Position(38, 6);
-    printf("\xb3\xb0 LOGIN AS A D M I N \xb0\xb3");
+    printf("\xb3\xb0 LOGIN AS A D M I N \xb0\xb3\n\n");
     // Position(35, 9);
     // printf("\xb3\xdb\xdb 1. SUPER ADMIN ");
     // Position(35, 12);
@@ -594,10 +594,11 @@ void login(){
     read = fopen("db/key/auth.tsn","rb+");
     fscanf(read,"%s %s",su._user,su._pass);
     
-    printf("L O G I N  AS  A D M I N \n");
-    printf("USERNAME : ");
+    printf("\n L O G I N  AS  A D M I N \n");
+    printf("\n USERNAME : ");
     gets(su.cmp_user);
-    printf("PASSWORD :");
+    printf("\n PASSWORD :");
+
     while (ch != 13){
         ch = getch();
         if(ch != 13 && ch !=8){
@@ -615,8 +616,8 @@ void login(){
     if((check,check1) == 0){
         menu();
     } else{
-        system("color 4");
-        printf( " Wrong Username Or Password" );
+        system("color D");
+        printf( " \n Wrong Username Or Password \n " );
         login();
     }
   
