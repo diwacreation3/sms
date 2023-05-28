@@ -27,7 +27,8 @@ void About(void);
 void menu(void);
 void search(void);
 void logout(void);
-
+void login_panel(void);
+void login(void);
 void New_admission(void);
 void view_students(void);
 int code = 0;
@@ -45,7 +46,7 @@ int main()
 {
     SetConsoleTitle(TEXT("School Management System SMS "));             // giving title for window
     SetWindowPos(GetConsoleWindow(), NULL, 0, 0, 400, 300, SWP_NOSIZE); // set fixed size of console where 0 0 is x y and 400 pixels wide and 300 pixels high
-    menu();
+    login_panel();
     return 0;
 }
 void menu()
@@ -71,7 +72,7 @@ void menu()
     Position(90, 5);
     printf(" 7.Log out");
     Position(105, 5);
-    printf("8.delete  \xdb\xb3 \n");
+    printf("8.Help  \xdb\xb3 \n");
 
     switch (getch())
     {
@@ -209,7 +210,7 @@ void New_admission()
     else if (class == 10)
     {
         class_10();
-        fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        fprintf(info, "%s \t%s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
     }
     else
     {
@@ -408,10 +409,11 @@ void search()
     int check, status = 0;
     char name1[max];
     long long int phone;
-
-    printf("\t\tSearch \n");
-
-    printf("Enter name: ");
+    system("cls");
+    Position(35,2);
+    printf("\xb3\xdb\xdb S E A R C H   S T U D E N T \xdb\xdb\xb3");
+    Position(32,4);
+    printf("\xb3\xdb Enter Name: ");
     gets(name1);
     search_db = fopen("db/student-list.txt", "r+");
 
@@ -420,13 +422,19 @@ void search()
         check = strcmp(name, name1);
         if (check == 0)
         {
-            printf("\t\t ** Record Found ** \t\n");
-            printf("Name: %s\n", name);
-            printf("class: %d\n", class);
-            printf("Parent_Name: %s\n", parent_name);
-            printf("Phone No: %lld\n", phone);
+            Position(35,6);
+            printf(" \xb3\xb2\xb2 R E C O R D  F O U N D \xb2\xb2\xb3 \n");
+            Position(33,8);
+            printf("\xb3\xdb Name: %s\n", name);
+            Position(33,10);
+            printf("\xb3\xdb class: %d\n", class);
+            Position(33,12);
+            printf("\xb3\xdb Parent_Name: %s\n", parent_name);
+            Position(33,14);
+            printf("\xb3\xdb Phone No: %lld\n", phone);
             status = 1;
-            printf("Do you want to continue.. \n\n");
+            Position(33,20);
+            printf("\xb3\xb1 Do You Want To Continue Y(yes) or N(no) \n\n");
             if (getch() == 'y')
             {
                 search();
@@ -440,8 +448,10 @@ void search()
     if (status == 0)
     {
         system("cls");
-        printf("\t\tNo record found!!!\\n");
-        printf(" Press S to continue!!!\n\n");
+        Position(35,6);
+        printf("\xb3\xb2\xb2 R E C O R D NOT  F O U N D*** \xb2\xb2\xb3 \n");
+Position(35,8);
+        printf(" \xb3\xb2 PRESS ENTER \n\n");
         if (getch() == 's')
         {
             system("cls");
@@ -449,6 +459,7 @@ void search()
         }
     }
     fclose(search_db);
+    menu();
 }
 
 void About()
@@ -466,7 +477,7 @@ void About()
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Language Used   || C \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf("\t\t| Duration        || 45 hour \n");
+    printf("\t\t| Duration        || 50 hour \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(includes windows stdlib), unistd\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
@@ -481,6 +492,7 @@ void About()
 
 void logout()
 {
+    system("color C");
     system("cls");
     Position(31, 4);
     printf("\xDB\xDB\xDB\xDB SUPPORT THIS PROJECT \xDB\xDB\xDB\xDB");
@@ -492,5 +504,89 @@ void logout()
     printf("\xDB Github: https://github.com/diwacreation3");
     Position(31, 12);
     printf("Press enter for login panel");
+    getch();
+    login_panel();
+}
+
+void login_panel(){
+      system("cls");
+    int max = 100;
+    int input;
+    char school[max], s1[max], s2[max]; // get three string from file
+
+    FILE *read;
+    read = fopen("db/school.txt", "r");
+    fscanf(read, "%s %s %s", school, s1, s2);
+
+    Position(35, 1);
+    printf("\xdb\xdb\xdb\xdb\xdb\xb3 W E L C O M E \xb3\xdb\xdb\xdb\xdb\xdb\n");
+    Position(33, 3);
+    printf("\xdb\xdb\xdb\xb3 %s %s %s \xb3\xdb\xdb\xdb\n\n", school, s1, s2);
+    fclose(read);
+
+    Position(38, 6);
+    printf("\xb3\xb0 LOGIN AS \xb0\xb3");
+    // Position(35, 9);
+    // printf("\xb3\xdb\xdb 1. SUPER ADMIN ");
+    Position(35, 12);
+    printf("\xb3\xdb\xdb 1. ADMIN \n");
+
+    if (getch() == '1')
+    {
+        login();
+    }
+    // else if (getch() == '2')
+    // {
+    //     admin();
+    // }
+    else
+    {
+        printf("\xb3\xb\xdb Invalid Key \n");
+        main();
+    }
+}
+void login(){
+      int max = 50;
+    FILE *read;
+    struct login_su
+    {
+        char cmp_user[max]; // cmp = compare
+        char _user[max];  // su= super user
+        char cmp_pass[max];
+        char _pass[max];
+    };struct login_su su;
+    int check , check1;
+    char ch;
+    char w = '*';
+    int i=0;
+    read = fopen("db/auth.tsn","rb+");
+    fscanf(read,"%s %s",su._user,su._pass);
+    
+    printf("L O G I N  AS  A D M I N \n");
+    printf("USERNAME : ");
+    gets(su.cmp_user);
+    printf("PASSWORD :");
+    while (ch != 13){
+        ch = getch();
+        if(ch != 13 && ch !=8){
+            printf( "%c",w );
+            su.cmp_pass[i]=ch;
+            i++;
+        }
+    }
+    su.cmp_pass[i] = '\0';
+   
+    
+    
+    check = strcmp(su.cmp_user,su._user);
+    check1 = strcmp(su.cmp_pass,su._pass);
+    if((check,check1) == 0){
+        menu();
+    } else{
+        printf( " Wrong Username Or Password" );
+        login();
+    }
+  
+
     getch();
 }
