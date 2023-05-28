@@ -27,7 +27,7 @@ void About(void);
 void menu(void);
 void search(void);
 void logout(void);
-void delete_db(void);
+
 void New_admission(void);
 void view_students(void);
 int code = 0;
@@ -96,9 +96,7 @@ void menu()
     case '7':
         logout();
         break;
-    case '8':
-        delete_db();
-        break;
+    
     default:
         system("cls");
         printf("invalid input \n");
@@ -323,7 +321,10 @@ void view_students()
 void update_student()
 {
     int class;
+    system("cls");
+    Position(35,2);
     printf( "\xb3\xdb U P D A T E   S T U D E N T  D E T A I L \xdb\xb3" );
+    Position(35,4);
     printf("\xdb\xb3 Enter class: ");
     scanf("%d", &class);
     if (class == 1)
@@ -383,11 +384,11 @@ void update_student()
     }
     else
     {
-        printf("Sorry their is not such class ");
+        printf("\xb3\xb0 Sorry their is not such class ");
     }
 
     // back to home
-    printf("Do you wanna Continue y or n ");
+    printf(" \xb3\xdb Do you wanna Continue y or n ");
     if (getch() == 'y' && 'Y')
     {
         update_student();
@@ -473,7 +474,7 @@ void About()
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Project Link: https://github.com/diwacreation3  \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf("\n press any key....");
+    printf("\n \xb3 Press Enter ");
     getch();
     menu();
 }
