@@ -52,10 +52,16 @@ int main()
 void menu()
 {
     system("cls");
+    int max= 50;
+    char school[max],s1[max],s2[max];
+    FILE *read;
+    read = fopen("db/school.txt", "r");
+    fscanf(read, "%s %s %s", school, s1, s2);
     Position(30, 1);
     printf("\xb3\xdb\xdb S C H O O L  M A N A G E M E N T   S Y S T E M  \xdb\xdb\xb3");
     Position(40, 3);
-    printf("\xb3\xdb\xdb Sharada Secondary School \xdb\xdb\xb3");
+    printf("\xdb\xdb\xdb\xb3 %s %s %s \xb3\xdb\xdb\xdb\n\n", school, s1, s2);
+    fclose(read);
     Position(1, 5);
 
     printf("\xb3\xdb 1.Home");
@@ -492,7 +498,7 @@ void About()
 
 void logout()
 {
-    system("color C");
+    system("color B");
     system("cls");
     Position(31, 4);
     printf("\xDB\xDB\xDB\xDB SUPPORT THIS PROJECT \xDB\xDB\xDB\xDB");
@@ -523,7 +529,8 @@ void login_panel(){
     Position(33, 3);
     printf("\xdb\xdb\xdb\xb3 %s %s %s \xb3\xdb\xdb\xdb\n\n", school, s1, s2);
     fclose(read);
-
+    Position(3,3);
+    printf( "Press q to exit" );
     Position(38, 6);
     printf("\xb3\xb0 LOGIN AS \xb0\xb3");
     // Position(35, 9);
@@ -535,15 +542,18 @@ void login_panel(){
     {
         login();
     }
-    // else if (getch() == '2')
-    // {
-    //     admin();
-    // }
+    else if (getch() == 'q' && 'Q')
+    {
+        exit(1);
+        Sleep(800);
+    }
     else
     {
         printf("\xb3\xb\xdb Invalid Key \n");
         main();
     }
+    
+    
 }
 void login(){
       int max = 50;
