@@ -18,6 +18,7 @@ project for BICTE 1st semester by Tribhuvan University
 #include "lib/view.c"
 #include "lib/update_db.c"
 #include "t-gui.h"
+#include "on_board.c"
 // end user defined library
 
 // #define MAX 50
@@ -44,9 +45,17 @@ int code = 0;
 
 int main()
 {
+    system("color B");
+    FILE *read;
+    read = fopen("db/school.txt","r");
     SetConsoleTitle(TEXT("School Management System SMS "));             // giving title for window
     SetWindowPos(GetConsoleWindow(), NULL, 0, 0, 400, 300, SWP_NOSIZE); // set fixed size of console where 0 0 is x y and 400 pixels wide and 300 pixels high
-    login_panel();
+    if (read == NULL)
+    {
+        welcome();
+    } else{
+        login_panel();
+    }
     return 0;
 }
 void menu()
@@ -483,7 +492,7 @@ void About()
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Language Used   || C \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf("\t\t| Duration        || 50 hour \n");
+    printf("\t\t| Duration        || 45 hour \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(includes windows stdlib), unistd\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
@@ -536,16 +545,22 @@ void login_panel(){
     // Position(35, 9);
     // printf("\xb3\xdb\xdb 1. SUPER ADMIN ");
     Position(35, 12);
-    printf("\xb3\xdb\xdb 1. ADMIN \n");
-
-    if (getch() == '1')
+    printf("\xb3\xdb\xdb  A D M I N \n");
+    login();
+    // if (getch() == '1')
+    // {
+    //     login();
+    // }
+     if (getch() == 'q' && 'Q')
     {
-        login();
-    }
-    else if (getch() == 'q' && 'Q')
-    {
-        exit(1);
+        system("cls");
+        printf( "\t\t\t\t YOU WILL BE EXITED \n\n" );
+        printf( "\t\t Press Any Key...." );
+        getch();
         Sleep(800);
+        exit(1);
+        
+        
     }
     else
     {
@@ -569,7 +584,7 @@ void login(){
     char ch;
     char w = '*';
     int i=0;
-    read = fopen("db/auth.tsn","rb+");
+    read = fopen("db/key/auth.tsn","rb+");
     fscanf(read,"%s %s",su._user,su._pass);
     
     printf("L O G I N  AS  A D M I N \n");
@@ -593,6 +608,7 @@ void login(){
     if((check,check1) == 0){
         menu();
     } else{
+        system("color 4");
         printf( " Wrong Username Or Password" );
         login();
     }
