@@ -7,7 +7,7 @@ FILE *info_read;
     int f;
     info_read = fopen("db/student/class-1.txt", "r");
     if(info_read == NULL){
-        printf( "Database is Empty!! " );
+        printf( "\xb3\xdb Database is Empty!! " );
     }
     int class = 1;
     char name[MAX], parent_name[MAX], addr[MAX];
@@ -16,20 +16,21 @@ FILE *info_read;
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
     printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+  
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -46,23 +47,20 @@ FILE *info_read;
     char name[MAX], parent_name[MAX], addr[MAX];
     long long int phone;
     char dob[MAX];
-    // printf( "Enter class(1 to 10 ): " );
-    // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -81,21 +79,20 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+     printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -114,21 +111,20 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+     printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -147,18 +143,21 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
+
+    // Print border.
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    fclose(info_read);
 
     // Print border.
     printf("+-------------------------------------------------------------------------------------------+\n");
@@ -180,21 +179,20 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -213,21 +211,20 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -246,21 +243,20 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -279,21 +275,20 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class    Name        DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+     printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -312,21 +307,20 @@ FILE *info_read;
     char dob[MAX];
     // printf( "Enter class(1 to 10 ): " );
     // scanf("%d",&class);
-    printf("\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
-    printf("| Class    Name        DOB            Address           Parent-Name         Phone No.       |\n");
-    printf("+-------------------------------------------------------------------------------------------+\n");
+     printf("\t\t+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t| Class  Name          DOB            Address           Parent-Name         Phone No.       |\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
 
     // Print data in tabular form.
     while (fscanf(info_read, "%s %s %s  %s  %lld", name, dob, &addr, parent_name, &phone) != EOF)
     {
-        printf("| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
+        printf("\t\t| %-*d %-*s %-*s \t %-*s \t%-*s \t %-*lld\t  \n",
                6, class, 15, name, 10, dob, 10, addr, 13, parent_name, 10, phone,10);
             
     }
 
     // Print border.
-    printf("+-------------------------------------------------------------------------------------------+\n");
+    printf("\t\t+-------------------------------------------------------------------------------------------+\n");
     fclose(info_read);
 }
 
@@ -341,13 +335,13 @@ void view_all(){
     //opening file 
     read_db= fopen("db/student-list.txt","r+");
     printf("\n");
-    printf("+--------------------------------------------------------------+\n");
-    printf("| Class        Name        Parent-Name         Phone No.       |\n");
-    printf("+--------------------------------------------------------------+\n");
+    printf("\t\t+--------------------------------------------------------------+\n");
+    printf("\t\t| Class        Name        Parent-Name         Phone No.       |\n");
+    printf("\t\t+--------------------------------------------------------------+\n");
     while (fscanf(read_db,"%d %s %s %lld",&class,name,Parent_name,&Phone)!= EOF)
     {
-        printf( "|  %-*d\t %-*s\t %-*s %-*lld \n",10 ,class,10, name,10, Parent_name,15, Phone );
+        printf( "\t\t|  %-*d\t %-*s\t %-*s %-*lld \n",10 ,class,10, name,10, Parent_name,15, Phone );
     }
-    printf("+--------------------------------------------------------------+\n");
+    printf("\t\t+--------------------------------------------------------------+\n");
     fclose(read_db);
 }
