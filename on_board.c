@@ -1,14 +1,21 @@
 //include header files here
 #include <stdio.h>
+
 // #include "t-gui.h"
 #include <conio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 void welcome(void);
 void Setup_admin(void);
+
 // void login(void);
 // int main(){
+
+
 //     welcome();
 //     return 0;
-// }
+//  };
 void welcome(){
     //print text
     system("cls");
@@ -75,20 +82,21 @@ void Setup_admin(){
     // fclose(auth);
     // system("cls");
 
-    Position(30,4);
+    Position(38,6);
     printf( "\xb3\xb2\xb2 C R E A T E   A D M I N  " );
-    Position(35,6);
+    Position(35,8);
     printf( "\xb3\xb0 Username: " );
-    gets(su.su_user);
-    Position(35,7);
+    gets(su.user);
+    Position(35,10);
     printf( "\xb3\xb0 Password: " );
-    gets(su.su_pass);
-    auth = fopen("db/key/auth.tsn","wb");
+    gets(su.pass);
+    auth = fopen("db/key/auth.tsn","wb+");
     fprintf(auth,"%s %s",su.user  ,su.pass);
     fclose(auth);
-    printf( "Press Enter and Open again" );
+    printf( "\xb3\xb2 Press Enter and Open again" );
     getch();
     Sleep(1000);
     
 }
+
 
