@@ -30,3 +30,29 @@ This project is build as a Semester Assignmant (Project Work) of BICTE Program C
 
 ### Screenshots
 
+![installer,screen](/snaps/snap1.png)
+*Add school name Eg:- Sharada Secondary School*
+
+![create,admin](/snaps/snap2.png)
+*Enter user name and password eg:- admin admin*
+
+![login-admin](/snaps/snap3.png)
+*Enter user name and password eg;- admin admin*
+
+![home/admin-panel](/snaps/snap4.png)
+*Select menu option from 1 to 8*
+
+![new-admission](/snaps/snap6.png)
+*add student details*
+
+![view](/snaps/snap7.png)
+*pres S or D for navigation*
+
+![logout](/snaps/snap8.png)
+*outro screen*
+
+![Update](/snaps/snap9.png)
+*update detail*
+
+![about](/snaps/snap10.png)
+*about section*
