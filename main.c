@@ -539,7 +539,7 @@ void logout()
 }
 
 void login_panel(){
-      system("cls");
+    system("cls");
     int max = 100;
     int input;
     char school[max], s1[max], s2[max]; // get three string from file
