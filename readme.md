@@ -2,10 +2,18 @@
 
 #### Share and contribute on this project 📎
 
+This project have lots of things to be done. My exam is coming and i think i will make some changes after it.
+
 ## About 🤔
 
 This project is build as a Semester Assignmant (Project Work) of BICTE Program Conducted by Tribhuvan University (TU) 🏫 and Submitted to Makawanpur Multiple Campus 🏫. The project still have some flaws but it is ok as an assingment
 
+### How To run ?
+This project is completly developed and tested inside vscode using GCC compiler (mingw). 
+1. First setup your environment then clone repo
+2. `` git clone https://github.com/diwacreation3/sms.git `` 
+3. Then compile it TADA!! it will run 
+4. Contribute and send pull request
 ### TODO 🚩
 
 1. On Boarding Screen ✔
