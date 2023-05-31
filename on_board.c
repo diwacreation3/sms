@@ -1,6 +1,6 @@
 //include header files here
 #include <stdio.h>
-
+// #include <windows.h>
 // #include "t-gui.h"
 #include <conio.h>
 #include <stdlib.h>
@@ -18,19 +18,27 @@ void Setup_admin(void);
 //  };
 void welcome(){
     //print text
+    printf( "\t\t\t\t P L E A S E  READ THIS BEFORE P R O C E D I N G\n\n" );
+    printf( "\t\t\t\tHOW?\n\n" );
+    printf( "\t\t 1. Enter school name like this:- Sharada secondary School only three words you can also use - to combine word \n\n" );
+    printf( "\t\t 2. On Admission Section you use eg:- dob 2004-03-24 insted of 2004 03 24 or anything else \n\n" );
+    printf( "\t\t 3. use - between addresses eg:- Hetauda-12\n\n" );
+    printf( "\t\t THANKS FOR READING:) \n\n" );
+    printf( "\t\t IF YOU DONT FOLLOW PROGRAM MIGHT CRASH  \n\n" );
+    getch();
     system("cls");
     system("color B");
     Position(30,1);
     printf( "\xb3\xdb\xdb\xdb\xdb\xdb\xdb S C H O O L  M A N A G E M E N T   S Y S T E M  \xdb\xdb\xdb\xdb\xdb\xdb\xb3" );
-    Position(38,3);
+    Position(40,3);
     printf( "\xb3\xb0 I N S T A L L A T I O N   S C R E E N \xb0\xb3" );
     
     //creating file 
     FILE *school_init;
     char School_name[50];
     school_init = fopen("db/school.txt","w");
-    // Position(3,5);
-    // printf( "\xb0 use ' - ' insted of space" );
+    // Position(40,7);
+    // printf( "\xb0 EX:Sharada Secondary School" );
     Position(6,7);
     printf( "\xb3\xb2\xb2 School Name: " );
     gets(School_name);
@@ -38,6 +46,7 @@ void welcome(){
     Position(12,9);
 
     printf( "\xb3 School name saved \xb3" );
+    MessageBox(NULL, "School Name Saved  ", "School Management System TSN", MB_OK);
     fclose(school_init);
     system("cls");
     Position(30,5);
@@ -93,8 +102,8 @@ void Setup_admin(){
     auth = fopen("db/key/auth.tsn","wb+");
     fprintf(auth,"%s %s",su.user  ,su.pass);
     fclose(auth);
-    printf( "\xb3\xb2 Press Enter and Open again" );
-    getch();
+      MessageBox(NULL, "Application will be close please Start Again!! ", "School Management System TSN", MB_OK);
+    // getch();
     Sleep(1000);
     
 }
