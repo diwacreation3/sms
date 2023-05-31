@@ -1,2 +1,6 @@
-* .exe
-* .txt
+*.exe
+*.txt
+
+test/
+db/
+.vscode/
