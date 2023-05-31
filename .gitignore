@@ -2,5 +2,5 @@
 *.txt
 
 test/
-db/
+
 .vscode/
