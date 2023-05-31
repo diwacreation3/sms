@@ -21,7 +21,7 @@ project for BICTE 1st semester by Tribhuvan University
 #include "lib/view.c"
 #include "lib/update_db.c"
 #include "t-gui.h"
-
+#include "delete.c"
 #include "on_board.c"
 
 // end user defined library
@@ -95,7 +95,7 @@ void menu()
     Position(90, 5);
     printf(" 7.Log out");
     Position(105, 5);
-    printf("8.Help  \xdb\xb3 \n");
+    printf("8.Delete  \xdb\xb3 \n");
 
     switch (getch())
     {
@@ -109,6 +109,7 @@ void menu()
         view_students();
         break;
     case '4':
+
         update_student();
         break;
     case '5':
@@ -120,7 +121,8 @@ void menu()
     case '7':
         logout();
         break;
-    
+    case '8':
+    delete_c_1(); // this will delete class 1 data only 
     default:
         system("cls");
         printf("invalid input \n");
@@ -178,16 +180,19 @@ void New_admission()
 
     // printf("Name\t DOB \t address \t Class \t Parent name \t\t mobile no \n");
     // printf( "%s \t %s \t %s \t %d \t %s \t %lld \t",name,dob,addr,class,parent_name,phone );
-    if (class < 11)
+    if (class < 11 && class >0)
     {
         Name_data();
         fprintf(info, "%d\t %s \t %s\t %lld\n", class, name, parent_name, phone);
+        fclose(info);
     }
 
     if (class == 1)
     {
         class_1();
         fprintf(info, "%s  %s\t %s \t %s \t %lld\t\n", name, dob, addr, parent_name, phone);
+        
+
     }
     else if (class == 2)
     {
@@ -488,7 +493,7 @@ Position(35,8);
 void About()
 {
     system("cls");
-    system("color 1");
+    system("color B");
     printf("\t\t+--------------------------------------------------------------------------------------+\n");
     printf("\t\t\t\t\t\xb3\xdb\xdb School Management System \xdb\xdb\xb3 \n");
     printf("\t\t+--------------------------------------------------------------------------------------+\n\n");
@@ -528,6 +533,8 @@ void logout()
     Position(31, 12);
     printf("Press enter for login panel");
     getch();
+  MessageBox(NULL, "Developed and bulit in  N E P A L ", "School Management System", MB_ICONWARNING |MB_OK);
+
     login_panel();
 }
 
@@ -586,7 +593,7 @@ void login(){
         char _user[max];  // su= super user
         char cmp_pass[max];
         char _pass[max];
-    };struct login_su su;
+    };struct login_su su; //structure for admin variable 
     int check , check1;
     char ch;
     char w = '*';
@@ -616,8 +623,9 @@ void login(){
     if((check,check1) == 0){
         menu();
     } else{
-        system("color D");
-        printf( " \n Wrong Username Or Password \n " );
+        system("color B");
+  MessageBox(NULL, "Wrong Username or password", "School management System SMS TSN", MB_ICONWARNING |MB_OK);
+       
         login();
     }
   
