@@ -287,7 +287,7 @@ void view_students()
         Position(30, 9);
         printf("\xdb\xb3 Enter class(1 to 10): ");
         scanf("%d", &class);
-        if (class > 10) //check if class i geater than 10
+        if (class > 10 ) //check if class i geater than 10
         {
             printf("\n \xb2\xb3 Oppss We Don't Have That Class \n");
         }
@@ -356,6 +356,7 @@ void update_student()
     Position(35,4);
     printf("\xdb\xb3 Enter class: ");
     scanf("%d", &class);
+
     if (class == 1)
     {
         class_1_u(); // calling class-1 update function
@@ -437,13 +438,15 @@ void search()
     int check, status = 0;
     char name1[max];
     long long int phone;
+
     system("cls");
     Position(35,2);
     printf("\xb3\xdb\xdb S E A R C H   S T U D E N T \xdb\xdb\xb3");
     Position(32,4);
     printf("\xb3\xdb Enter Name: ");
     gets(name1);
-    search_db = fopen("db/student-list.txt", "r+");
+
+    search_db = fopen("db/student-list.txt", "r");
 
     while (fscanf(search_db, "%d %s %s %lld", &class, &name, &parent_name, &phone) != EOF)
     {
@@ -505,13 +508,13 @@ void About()
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Language Used   || C \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf("\t\t| Duration        || 45 hour \n");
+    printf("\t\t| Duration        || 50 hour \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| Libraries Used  || stdio, conio, string, t-gui(windows stdlib), unistd,types,stat\n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\t\t| CopyRight 2023 School Management System. All Rights Reserved  \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
-    printf("\t\t| Project Link: https://github.com/diwacreation3  \n");
+    printf("\t\t| Live Project Link: https://github.com/diwacreation3/sms  \n");
     printf("\t\t+---------------------------------------------------------------------------------+\n");
     printf("\n \xb3 Press Enter ");
     getch();
@@ -533,7 +536,7 @@ void logout()
     Position(31, 12);
     printf("Press enter for login panel");
     getch();
-  MessageBox(NULL, "Developed and bulit in  N E P A L ", "School Management System", MB_ICONWARNING |MB_OK);
+  MessageBox(NULL, "Developed and Built in  N E P A L ", "School Management System", MB_ICONINFORMATION |MB_OK); //this will create msg box from windows.header file 
 
     login_panel();
 }
