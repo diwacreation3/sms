@@ -572,8 +572,8 @@ void login_panel(){
      if (getch() == 'q' && 'Q')
     {
         system("cls");
-        printf( "\t\t\t\t YOU WILL BE EXITED \n\n" );
-        printf( "\t\t Press Any Key...." );
+  MessageBox(NULL, "Thanks for using our System ❤🙂 ", "School Management System", MB_ICONINFORMATION |MB_OK); //this will create msg box from windows.header file 
+        
         getch();
         Sleep(800);
         exit(1);
