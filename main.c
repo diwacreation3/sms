@@ -572,9 +572,7 @@ void login_panel(){
      if (getch() == 'q' && 'Q')
     {
         system("cls");
-  MessageBox(NULL, "Thanks for using our System ❤🙂 ", "School Management System", MB_ICONINFORMATION |MB_OK); //this will create msg box from windows.header file 
-        
-        getch();
+        MessageBox(NULL, "Thanks for using our System :) ", "School Management System", MB_ICONINFORMATION |MB_OK); //this will create msg box from windows.header file 
         Sleep(800);
         exit(1);
         
@@ -597,37 +595,37 @@ void login(){
         char cmp_pass[max];
         char _pass[max];
     };struct login_su su; //structure for admin variable 
+
     int check , check1;
     char ch;
     char w = '*';
     int i=0;
     read = fopen("db/key/auth.tsn","rb+");
     fscanf(read,"%s %s",su._user,su._pass);
-    
+    system("cls");
     printf("\n L O G I N  AS  A D M I N \n");
     printf("\n USERNAME : ");
     gets(su.cmp_user);
     printf("\n PASSWORD :");
 
-    while (ch != 13){
+    while (ch != 13){  
         ch = getch();
-        if(ch != 13 && ch !=8){
-            printf( "%c",w );
+        if(ch != 13 && ch !=8){ 
+            printf( "%c",w ); //print * in password input
             su.cmp_pass[i]=ch;
             i++;
         }
     }
     su.cmp_pass[i] = '\0';
    
-    
-    
-    check = strcmp(su.cmp_user,su._user);
-    check1 = strcmp(su.cmp_pass,su._pass);
-    if((check,check1) == 0){
+    check = strcmp(su.cmp_user,su._user); //comparing usernames 
+    check1 = strcmp(su.cmp_pass,su._pass); // comparing passwords 
+
+    if((check,check1) == 0){ // if both match it will be zero and menu screen will be appear
         menu();
     } else{
         system("color B");
-  MessageBox(NULL, "Wrong Username or password", "School management System SMS TSN", MB_ICONWARNING |MB_OK);
+        MessageBox(NULL, "Wrong Username or Password", "School management System  TSN", MB_ICONWARNING |MB_OK);
        
         login();
     }
