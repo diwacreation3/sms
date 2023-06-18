@@ -602,7 +602,7 @@ void login(){
     int i=0;
     read = fopen("db/key/auth.tsn","rb+");
     fscanf(read,"%s %s",su._user,su._pass);
-    system("cls");
+ 
     printf("\n L O G I N  AS  A D M I N \n");
     printf("\n USERNAME : ");
     gets(su.cmp_user);
@@ -621,11 +621,11 @@ void login(){
     check = strcmp(su.cmp_user,su._user); //comparing usernames 
     check1 = strcmp(su.cmp_pass,su._pass); // comparing passwords 
 
-    if((check,check1) == 0){ // if both match it will be zero and menu screen will be appear
+    if(check == 0 && check1 == 0){ // if both match with zero the menu screen will be appear
         menu();
     } else{
         system("color B");
-        MessageBox(NULL, "Wrong Username or Password", "School management System  TSN", MB_ICONWARNING |MB_OK);
+        MessageBox(NULL, "Wrong Username or Password", "School management System  TSN", MB_ICONWARNING|MB_OK);
        
         login();
     }
